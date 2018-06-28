@@ -21,7 +21,7 @@ export default {
       if (!state.holidays[year]) {
         commit('holidays', {
           year,
-          holidays: axios.get(`https://feiertage-api.de/api/?jahr=${year}&nur_land=${st}`).then(
+          holidays: axios.get(`https://feiertage-api.de/api/?jahr=${year}&nur_land=${st.toUpperCase()}`).then(
             res => {
               const holidays = {
                 getHoliday (date) {
@@ -35,7 +35,10 @@ export default {
                 }
               }
               Object.keys(res.data).forEach(title => {
-                holidays[res.data[title].datum] = title
+                const holiday = res.data[title]
+                if (!holiday.hinweis) {
+                  holidays[holiday.datum] = title
+                }
               })
               commit('holidays', {year, holidays})
               return holidays

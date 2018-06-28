@@ -61,8 +61,6 @@
 </template>
 
 <script>
-import {pad} from '../plugins/format'
-
 export default {
   components: {Request},
   data () {
@@ -116,7 +114,7 @@ export default {
 
       Promise.all([
         this.$store.dispatch('holidays/load', {year}),
-        this.$store.dispatch('interpretation/loadEntries', {year, month})
+        this.$store.dispatch('interpretation/loadTimes', {year, month})
       ])
         .then(([holidays, entries]) => {
           const minutesByDay = {}
@@ -124,31 +122,29 @@ export default {
           const days = []
           entries.forEach(entry => {
             if (!minutesByDay.hasOwnProperty(entry.date)) {
-              minutesByDay[entry.date] = 0
+              minutesByDay[entry.name] = 0
             }
-            const hours = parseInt(entry.duration.split(':', 1)[0])
-            const minutes = parseInt(entry.duration.split(':', 2)[1]) + hours * 60
-            minutesByDay[entry.date] += minutes
+            const minutes = entry.hours * 60
+            minutesByDay[entry.name] += minutes
             sum.worked += minutes
           })
           const date = new Date(Date.UTC(year, month - 1, 1))
           while (date.getMonth() === month - 1 && date.getFullYear() === year) {
-            const d = pad(date.getDate(), 2) + '/' + pad(month, 2) + '/' + year
+            const d = this.$moment(date).format('YY-MM-DD')
             const holiday = date.getDay() === 0 ? 'Sunday' : (date.getDay() === 6 ? 'Saturday' : holidays.getHoliday(date))
-            let worked = 0
-            let diff = 0
-            let expected = 0
+            const expected = holiday ? 0 : getHoursPerDay(date.getDay()) * 60
+            const worked = minutesByDay[d] || 0
+            const diff = worked - expected
+            sum.diff += diff
             const isFuture = this.$moment(date).isAfter(this.today, 'day')
+            if (!isFuture) {
+              sum.diffUntilToday += diff
+            }
             if (!holiday) {
-              expected = getHoursPerDay(date.getDay()) * 60
-              worked = minutesByDay[d] || 0
-              diff = (minutesByDay[d] || 0) - expected
               sum.expected += expected
               if (!isFuture) {
                 sum.expectedUntilToday += expected
-                sum.diffUntilToday += diff
               }
-              sum.diff += diff
             }
             const day = {date: new Date(date.getTime()), worked, diff, holiday, expected, isFuture}
             day.class = this.getDayClass(day)
