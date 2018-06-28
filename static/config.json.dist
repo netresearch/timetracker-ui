@@ -1,0 +1,5 @@
+{
+  "state": "sn",
+  "defaultHoursPerDay": 8,
+  "timetrackerUrl": "/tt"
+}
