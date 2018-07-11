@@ -9,7 +9,7 @@ A user interface for [timetracker](https://github.com/netresearch/timetracker) -
 npm install
 
 # set config
-cp config/config.json.dist config/config.json
+cp static/config.json.dist static/config.json
 
 # serve with hot reload at localhost:8080
 npm TIMETRACKER_URL=https://timetracker.example.com run dev
