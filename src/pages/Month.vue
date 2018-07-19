@@ -55,7 +55,7 @@
             <td class="text-right" :class="sum.worked - sum.expectedUntilToday < 0 ? 'alert-danger' : 'alert-success'">{{sum.worked - sum.expectedUntilToday | minutes(true)}}</td>
           </tr>
           <tr>
-            <th>Due</th>
+            <th>Due until end of month</th>
             <td class="text-right" :class="sum.diffUntilToday < 0 ? 'alert-danger' : 'alert-success'">{{sum.diff | minutes(true)}}</td>
           </tr>
         </table>
