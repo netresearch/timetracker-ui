@@ -128,7 +128,7 @@ export default {
             if (!minutesByDay.hasOwnProperty(entry.date)) {
               minutesByDay[entry.name] = 0
             }
-            const minutes = entry.hours * 60
+            const minutes = Math.round(entry.hours * 60)
             minutesByDay[entry.name] += minutes
             sum.worked += minutes
           })
