@@ -1,11 +1,11 @@
-FROM node:alpine as builder
+FROM node:lts-alpine as builder
 
 LABEL maintainer="christian.opitz@netresearch.de"
 
 WORKDIR /root/build
 
 COPY package*.json /root/build/
-RUN npm install
+RUN npm ci
 
 COPY ./.babelrc ./.eslint* ./.postcssrc.js ./index.html ./
 COPY ./src ./src
