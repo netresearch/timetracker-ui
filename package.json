@@ -58,7 +58,7 @@
     "postcss-url": "^10.1.3",
     "rimraf": "^5.0.1",
     "sass-loader": "^13.3.2",
-    "semver": "^7.4.0",
+    "semver": "^7.5.2",
     "shelljs": "^0.8.5",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
