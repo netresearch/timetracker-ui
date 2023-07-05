@@ -49,7 +49,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^5.5.1",
     "node-notifier": "^10.0.1",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "ora": "^6.3.0",
     "portfinder": "^1.0.32",
