@@ -17,7 +17,7 @@
     "bootstrap-vue": "^2.23.1",
     "vue": "^3.4.37",
     "vue-moment": "^4.1.0",
-    "vue-router": "^4.4.2",
+    "vue-router": "^4.4.3",
     "vuex": "^4.1.0",
     "vuex-persistedstate": "^4.1.0"
   },
