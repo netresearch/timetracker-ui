@@ -17,7 +17,7 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy: {
       '/tt': {
-        target: process.env.TIMETRACKER_URL || 'https://tt.netresearch.de',
+        target: process.env.TIMETRACKER_URL || 'http://localhost:3000',
         changeOrigin: true,
         secure: false,
         configure: (proxy) => {
