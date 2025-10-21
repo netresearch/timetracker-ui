@@ -1,4 +1,4 @@
-FROM node:22-alpine AS builder
+FROM node:25-alpine AS builder
 
 LABEL maintainer="christian.opitz@netresearch.de"
 
