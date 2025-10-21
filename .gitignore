@@ -1,5 +1,3 @@
-/static/config.json
-
 .DS_Store
 node_modules/
 /dist/
@@ -14,3 +12,6 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+# Local config (copy from .dist in development)
+/static/config.json
