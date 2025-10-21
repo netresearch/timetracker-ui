@@ -8,7 +8,7 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 20
 
-  # Maintain dependencies for npm
+  # Maintain dependencies for pnpm/npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -16,7 +16,7 @@ updates:
     open-pull-requests-limit: 20
     versioning-strategy: increase
 
-  # Maintain dependencies for Composer
+  # Maintain dependencies for Docker
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
