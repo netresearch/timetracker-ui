@@ -5,7 +5,7 @@ LABEL maintainer="christian.opitz@netresearch.de"
 WORKDIR /root/build
 
 # Install pnpm
-RUN corepack enable && corepack prepare pnpm@10.19.0 --activate
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Copy package files for pnpm
 COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml .pnpmrc ./
