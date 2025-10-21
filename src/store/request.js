@@ -18,8 +18,8 @@ ttAxios.interceptors.response.use(res => res, error => {
         if (state.user.isLoggedIn) {
           unsubscribe()
           const config = {...error.response.config}
-          delete config.baseURL
-          axios.request(config).then(resolve)
+          // Keep the baseURL so retried requests go to the right endpoint
+          ttAxios.request(config).then(resolve)
         }
       })
     })
