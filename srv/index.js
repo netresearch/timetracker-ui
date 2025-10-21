@@ -23,6 +23,19 @@ proxy.on('proxyRes', function (proxyRes, req, res) {
   }
 })
 
+// Handle proxy errors gracefully
+proxy.on('error', function (err, req, res) {
+  console.error('Proxy error:', err.message)
+  if (!res.headersSent) {
+    res.writeHead(502, { 'Content-Type': 'application/json' })
+    res.end(JSON.stringify({
+      error: 'Bad Gateway',
+      message: 'Unable to connect to timetracker backend',
+      hint: 'Check that TIMETRACKER_URL is correct and the backend is running'
+    }))
+  }
+})
+
 module.exports = function (app) {
   app.use('/tt', (req, res) => {
     proxy.web(req, res, {
