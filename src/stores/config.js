@@ -10,7 +10,7 @@ export const useConfigStore = defineStore('config', {
   }),
   actions: {
     async load() {
-      const res = await axios.get('/static/config.json')
+      const res = await axios.get('/config.json')
       const config = typeof res.data === 'string' ? JSON.parse(res.data) : res.data
       this.state = config.state
       this.timetrackerUrl = config.timetrackerUrl
