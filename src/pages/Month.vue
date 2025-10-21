@@ -117,7 +117,7 @@
               <th>Due until today</th>
               <td
                 class="text-end"
-                :class="sum.worked - sum.expectedUntilToday < 0 ? 'alert-danger' : 'alert-success'"
+                :class="sum.worked - sum.expectedUntilToday < 0 ? 'table-danger' : 'table-success'"
               >
                 {{ formatMinutes(sum.worked - sum.expectedUntilToday, true) }}
               </td>
@@ -126,7 +126,7 @@
               <th>Due until end of month</th>
               <td
                 class="text-end"
-                :class="sum.diffUntilToday < 0 ? 'alert-danger' : 'alert-success'"
+                :class="sum.diffUntilToday < 0 ? 'table-danger' : 'table-success'"
               >
                 {{ formatMinutes(sum.diff, true) }}
               </td>
@@ -177,11 +177,11 @@ function getDayClass(day) {
     return ''
   }
   if (day.worked >= day.expected * 1 && day.worked <= day.expected * 1.12) {
-    return 'alert-success'
+    return 'table-success'
   } else if (day.worked > day.expected * 0.5 && day.worked < day.expected * 1) {
-    return 'alert-warning'
+    return 'table-warning'
   } else {
-    return 'alert-danger'
+    return 'table-danger'
   }
 }
 
