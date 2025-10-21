@@ -22,7 +22,7 @@
     "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
+    "autoprefixer": "^10.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
