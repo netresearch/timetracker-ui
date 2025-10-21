@@ -36,11 +36,17 @@ export default {
       return request.post('login', form, {
         maxRedirects: 0,
         skipLoginInterceptor: true,
+        validateStatus: (status) => status >= 200 && status < 400, // Accept redirects as success
         headers: {
           Accept: 'text/html',
           'Content-Type': 'application/x-www-form-urlencoded'
         }})
-        .then(dispatch('checkLogin'))
+        .then(() => dispatch('checkLogin'))
+        .then(() => dispatch('loadUser')) // Load user data after successful login
+        .catch((err) => {
+          console.error('Login error:', err.response && err.response.status, err.message)
+          return dispatch('checkLogin')
+        })
     },
     logout () {
       request.get('logout').then(() => location.reload(true))
