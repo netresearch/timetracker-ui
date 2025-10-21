@@ -59,8 +59,13 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    sass: generateLoaders('sass', {
+      indentedSyntax: true,
+      silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions', 'abs-percent']
+    }),
+    scss: generateLoaders('sass', {
+      silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions', 'abs-percent']
+    }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
