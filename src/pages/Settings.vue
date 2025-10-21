@@ -4,43 +4,62 @@
     <hr>
     <h5>Hours per day</h5>
     <div class="w-50">
-      <b-form-group
+      <div
         v-for="(label, d) in days"
         :key="d"
-        horizontal
-        :label="label"
-        :label-cols="3"
-        :label-for="'hoursPerDay_' + d"
+        class="row mb-3"
       >
-        <b-form-select :id="'hoursPerDay_' + d" v-model="values[d]" @change="$nextTick(() => $store.commit('settings/hoursPerDay', values))">
-          <option v-for="n in 11" :key="d + '_' + n" :value="n - 1">{{n - 1}}</option>
-        </b-form-select>
-      </b-form-group>
+        <label
+          :for="'hoursPerDay_' + d"
+          class="col-sm-3 col-form-label"
+        >{{ label }}</label>
+        <div class="col-sm-9">
+          <select
+            :id="'hoursPerDay_' + d"
+            v-model="values[d]"
+            class="form-select"
+            @change="updateSettings"
+          >
+            <option
+              v-for="n in 11"
+              :key="d + '_' + n"
+              :value="n - 1"
+            >
+              {{ n - 1 }}
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      days: {
-        d_1: 'Monday',
-        d_2: 'Tuesday',
-        d_3: 'Wednesday',
-        d_4: 'Thursday',
-        d_5: 'Friday'
-      },
-      values: {}
-    }
+<script setup>
+import { ref, watch } from 'vue'
+import { useSettingsStore } from '../stores/settings'
+
+const settingsStore = useSettingsStore()
+
+const days = {
+  d_1: 'Monday',
+  d_2: 'Tuesday',
+  d_3: 'Wednesday',
+  d_4: 'Thursday',
+  d_5: 'Friday'
+}
+
+const values = ref({})
+
+// Watch for changes in store
+watch(
+  () => settingsStore.hoursPerDayAll,
+  (newValues) => {
+    values.value = { ...newValues }
   },
-  watch: {
-    '$store.state.settings.hoursPerDay': {
-      immediate: true,
-      handler () {
-        this.values = this.$store.getters['settings/hoursPerDay']
-      }
-    }
-  }
+  { immediate: true }
+)
+
+function updateSettings() {
+  settingsStore.setHoursPerDay(values.value)
 }
 </script>

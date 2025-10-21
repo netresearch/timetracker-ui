@@ -1,11 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Month from '@/pages/Month'
-import Settings from '@/pages/Settings'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Month from '@/pages/Month.vue'
+import Settings from '@/pages/Settings.vue'
 
-Vue.use(Router)
-
-export default new Router({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
@@ -23,3 +21,5 @@ export default new Router({
     }
   ]
 })
+
+export default router

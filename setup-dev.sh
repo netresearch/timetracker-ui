@@ -7,17 +7,25 @@ echo "🚀 Setting up timetracker-ui for development..."
 
 # Check Node version
 NODE_VERSION=$(node -v | cut -d'v' -f2 | cut -d'.' -f1)
-if [ "$NODE_VERSION" -lt 14 ] || [ "$NODE_VERSION" -gt 16 ]; then
-  echo "⚠️  Warning: Node $NODE_VERSION detected. This project requires Node 14-16."
-  echo "   Run 'nvm use 14' to switch to the correct version."
+if [ "$NODE_VERSION" -lt 22 ]; then
+  echo "⚠️  Warning: Node $NODE_VERSION detected. This project requires Node 22+ (LTS)."
+  echo "   Run 'nvm use 22' to switch to the correct version."
   exit 1
 fi
 
 echo "✅ Node $(node -v) detected"
 
+# Check if pnpm is installed
+if ! command -v pnpm &> /dev/null; then
+  echo "📦 Installing pnpm..."
+  npm install -g pnpm
+fi
+
+echo "✅ pnpm $(pnpm -v) detected"
+
 # Install dependencies
-echo "📦 Installing dependencies..."
-npm install
+echo "📦 Installing dependencies with pnpm..."
+pnpm install
 
 # Create config.json if it doesn't exist
 if [ ! -f "static/config.json" ]; then
@@ -30,14 +38,14 @@ fi
 
 # Install proxy service dependencies
 echo "📦 Installing proxy service dependencies..."
-cd srv && npm install
+cd srv && pnpm install
 cd ..
 
 echo ""
 echo "✅ Setup complete! You can now run:"
 echo ""
-echo "   TIMETRACKER_URL=https://tt.netresearch.de/ npm run dev"
+echo "   TIMETRACKER_URL=https://tt.netresearch.de/ pnpm dev"
 echo ""
-echo "   The dev server will start on http://0.0.0.0:8081"
+echo "   The dev server will start on http://0.0.0.0:8080"
 echo ""
 

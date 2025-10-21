@@ -1,35 +1,76 @@
 <template>
   <div id="app">
-    <login v-if="!isLoggedIn"></login>
-    <template v-else-if="$store.state.user.id">
-      <b-navbar class="mb-4" toggleable="md" type="dark" variant="info">
-        <b-navbar-brand to="/">TimeTracker Stats</b-navbar-brand>
-        <b-navbar-nav>
-          <b-nav-item to="/month">Month report</b-nav-item>
-          <b-nav-item to="/settings">Settings</b-nav-item>
-        </b-navbar-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item @click="$store.dispatch('user/logout')">Logout {{$store.state.user.info.abbr}}</b-nav-item>
-        </b-navbar-nav>
-      </b-navbar>
-      <router-view/>
+    <Login v-if="!userStore.isLoggedIn" />
+    <template v-else-if="userStore.id">
+      <nav class="navbar navbar-expand-md navbar-dark bg-info mb-4">
+        <div class="container-fluid">
+          <router-link
+            class="navbar-brand"
+            to="/"
+          >
+            TimeTracker Stats
+          </router-link>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon" />
+          </button>
+          <div
+            id="navbarNav"
+            class="collapse navbar-collapse"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <router-link
+                  class="nav-link"
+                  to="/month"
+                >
+                  Month report
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  class="nav-link"
+                  to="/settings"
+                >
+                  Settings
+                </router-link>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  @click.prevent="userStore.logout"
+                >
+                  Logout {{ userStore.info?.abbr }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <router-view />
     </template>
   </div>
 </template>
 
-<script>
-import Login from './components/Login'
-import {mapState} from 'vuex'
+<script setup>
+import { onMounted } from 'vue'
+import Login from './components/Login.vue'
+import { useUserStore } from './stores/user'
 
-export default {
-  components: {Login},
-  computed: mapState('user', ['isLoggedIn']),
-  created () {
-    this.$store.dispatch('user/loadUser')
-  }
-}
+const userStore = useUserStore()
+
+onMounted(() => {
+  userStore.loadUser()
+})
 </script>
 
 <style lang="scss">
-  @import "~scss/app";
+@import "@/assets/scss/app";
 </style>
