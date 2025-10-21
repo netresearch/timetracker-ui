@@ -50,7 +50,7 @@
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.4.3",
     "sass": "^1.45.0",
-    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
     "ora": "^1.4.0",
     "portfinder": "^1.0.13",
     "postcss-import": "^11.1.0",
