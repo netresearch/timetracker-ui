@@ -8,7 +8,6 @@ pnpm-debug.log*
 
 # pnpm
 .pnpm-store/
-pnpm-lock.yaml
 
 # Editor directories and files
 .idea
