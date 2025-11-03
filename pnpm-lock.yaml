@@ -35,7 +35,7 @@ importers:
         version: 9.38.0
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
-        version: 6.0.1(vite@7.1.12(sass@1.93.2))(vue@3.5.22)
+        version: 6.0.1(vite@7.1.12(sass@1.93.3))(vue@3.5.22)
       '@vue/compiler-sfc':
         specifier: ^3.5.22
         version: 3.5.22
@@ -49,11 +49,11 @@ importers:
         specifier: ^16.4.0
         version: 16.4.0
       sass:
-        specifier: ^1.93.2
-        version: 1.93.2
+        specifier: ^1.93.3
+        version: 1.93.3
       vite:
         specifier: ^7.1.11
-        version: 7.1.12(sass@1.93.2)
+        version: 7.1.12(sass@1.93.3)
 
   srv:
     dependencies:
@@ -1073,8 +1073,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  sass@1.93.2:
-    resolution: {integrity: sha512-t+YPtOQHpGW1QWsh1CHQ5cPIr9lbbGZLZnbihP/D/qZj/yuV68m8qarcV17nvkOX81BCrvzAlq2klCQFZghyTg==}
+  sass@1.93.3:
+    resolution: {integrity: sha512-elOcIZRTM76dvxNAjqYrucTSI0teAF/L2Lv0s6f6b7FOwcwIuA357bIE871580AjHJuSvLIRUosgV+lIWx6Rgg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -1492,10 +1492,10 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@vitejs/plugin-vue@6.0.1(vite@7.1.12(sass@1.93.2))(vue@3.5.22)':
+  '@vitejs/plugin-vue@6.0.1(vite@7.1.12(sass@1.93.3))(vue@3.5.22)':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.29
-      vite: 7.1.12(sass@1.93.2)
+      vite: 7.1.12(sass@1.93.3)
       vue: 3.5.22
 
   '@vue/compiler-core@3.5.22':
@@ -2099,7 +2099,7 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.52.5
       fsevents: 2.3.3
 
-  sass@1.93.2:
+  sass@1.93.3:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.1.4
@@ -2149,7 +2149,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite@7.1.12(sass@1.93.2):
+  vite@7.1.12(sass@1.93.3):
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2159,7 +2159,7 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       fsevents: 2.3.3
-      sass: 1.93.2
+      sass: 1.93.3
 
   vue-eslint-parser@10.2.0(eslint@9.38.0):
     dependencies:
