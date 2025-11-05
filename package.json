@@ -28,7 +28,7 @@
     "eslint-plugin-vue": "^10.5.1",
     "globals": "^16.4.0",
     "sass": "^1.93.2",
-    "vite": "^7.1.11"
+    "vite": "^7.2.0"
   },
   "engines": {
     "node": ">= 22.0.0",
