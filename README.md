@@ -4,9 +4,9 @@ A modern user interface for [timetracker](https://github.com/netresearch/timetra
 
 ## Tech Stack
 
-- **Vue 3.5.22** - Progressive JavaScript framework
-- **Vite 7.1.11** - Next generation frontend tooling
-- **Pinia 3.0.3** - Official Vue state management
+- **Vue 3.5.24** - Progressive JavaScript framework
+- **Vite 7.2.2** - Next generation frontend tooling
+- **Pinia 3.0.4** - Official Vue state management
 - **Bootstrap 5.3.8** - Modern UI framework
 - **Node 22.21.0 LTS** - JavaScript runtime
 - **pnpm 10+** - Fast, disk space efficient package manager
