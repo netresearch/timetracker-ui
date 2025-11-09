@@ -1,8 +1,16 @@
 <template>
-  <form class="login container mt-5" @submit.prevent="handleLogin">
-    <div class="card mx-auto" style="max-width: 400px;">
+  <form
+    class="login container mt-5"
+    @submit.prevent="handleLogin"
+  >
+    <div
+      class="card mx-auto"
+      style="max-width: 400px;"
+    >
       <div class="card-header">
-        <h1 class="h5 mb-0">Please login</h1>
+        <h1 class="h5 mb-0">
+          Please login
+        </h1>
       </div>
       <div class="card-body">
         <!-- Error alerts with proper ARIA roles -->
@@ -17,9 +25,9 @@
           <button 
             type="button" 
             class="btn-close" 
-            @click="wrong = false"
             aria-label="Close alert"
-          ></button>
+            @click="wrong = false"
+          />
         </div>
         <div 
           v-if="failed" 
@@ -33,8 +41,14 @@
 
         <!-- Username field -->
         <div class="mb-3">
-          <label for="username" class="form-label">
-            User name <span class="text-danger" aria-label="required">*</span>
+          <label
+            for="username"
+            class="form-label"
+          >
+            User name <span
+              class="text-danger"
+              aria-label="required"
+            >*</span>
           </label>
           <input
             id="username"
@@ -48,15 +62,24 @@
             required
             :aria-invalid="wrong ? 'true' : 'false'"
           >
-          <div id="username-help" class="form-text visually-hidden">
+          <div
+            id="username-help"
+            class="form-text visually-hidden"
+          >
             Enter your timetracker username
           </div>
         </div>
 
         <!-- Password field -->
         <div class="mb-3">
-          <label for="password" class="form-label">
-            Password <span class="text-danger" aria-label="required">*</span>
+          <label
+            for="password"
+            class="form-label"
+          >
+            Password <span
+              class="text-danger"
+              aria-label="required"
+            >*</span>
           </label>
           <input
             id="password"
@@ -70,7 +93,10 @@
             required
             :aria-invalid="wrong ? 'true' : 'false'"
           >
-          <div id="password-help" class="form-text visually-hidden">
+          <div
+            id="password-help"
+            class="form-text visually-hidden"
+          >
             Enter your timetracker password
           </div>
         </div>
@@ -84,7 +110,11 @@
         >
           <span v-if="!isLoading">Login</span>
           <span v-else>
-            <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            <span
+              class="spinner-border spinner-border-sm me-2"
+              role="status"
+              aria-hidden="true"
+            />
             Logging in...
           </span>
         </button>
