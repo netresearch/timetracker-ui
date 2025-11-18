@@ -35,7 +35,7 @@ importers:
         version: 9.39.1
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
-        version: 6.0.1(vite@7.2.2(sass@1.93.3))(vue@3.5.24)
+        version: 6.0.1(vite@7.2.2(sass@1.94.1))(vue@3.5.24)
       '@vue/compiler-sfc':
         specifier: ^3.5.24
         version: 3.5.24
@@ -49,11 +49,11 @@ importers:
         specifier: ^16.5.0
         version: 16.5.0
       sass:
-        specifier: ^1.93.3
-        version: 1.93.3
+        specifier: ^1.94.1
+        version: 1.94.1
       vite:
         specifier: ^7.2.2
-        version: 7.2.2(sass@1.93.3)
+        version: 7.2.2(sass@1.94.1)
 
   srv:
     dependencies:
@@ -1067,8 +1067,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  sass@1.93.3:
-    resolution: {integrity: sha512-elOcIZRTM76dvxNAjqYrucTSI0teAF/L2Lv0s6f6b7FOwcwIuA357bIE871580AjHJuSvLIRUosgV+lIWx6Rgg==}
+  sass@1.94.1:
+    resolution: {integrity: sha512-/YVm5FRQaRlr3oNh2LLFYne1PdPlRZGyKnHh1sLleOqLcohTR4eUUvBjBIqkl1fEXd1MGOHgzJGJh+LgTtV4KQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -1486,10 +1486,10 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@vitejs/plugin-vue@6.0.1(vite@7.2.2(sass@1.93.3))(vue@3.5.24)':
+  '@vitejs/plugin-vue@6.0.1(vite@7.2.2(sass@1.94.1))(vue@3.5.24)':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.29
-      vite: 7.2.2(sass@1.93.3)
+      vite: 7.2.2(sass@1.94.1)
       vue: 3.5.24
 
   '@vue/compiler-core@3.5.24':
@@ -2087,7 +2087,7 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.53.1
       fsevents: 2.3.3
 
-  sass@1.93.3:
+  sass@1.94.1:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.1.4
@@ -2137,7 +2137,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite@7.2.2(sass@1.93.3):
+  vite@7.2.2(sass@1.94.1):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2147,7 +2147,7 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       fsevents: 2.3.3
-      sass: 1.93.3
+      sass: 1.94.1
 
   vue-eslint-parser@10.2.0(eslint@9.39.1):
     dependencies:
