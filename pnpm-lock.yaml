@@ -35,7 +35,7 @@ importers:
         version: 9.39.2
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
-        version: 6.0.3(vite@7.3.0(sass@1.97.1))(vue@3.5.26)
+        version: 6.0.3(vite@7.3.0(sass@1.97.2))(vue@3.5.26)
       '@vue/compiler-sfc':
         specifier: ^3.5.25
         version: 3.5.26
@@ -50,10 +50,10 @@ importers:
         version: 17.0.0
       sass:
         specifier: ^1.93.3
-        version: 1.97.1
+        version: 1.97.2
       vite:
         specifier: ^7.2.2
-        version: 7.3.0(sass@1.97.1)
+        version: 7.3.0(sass@1.97.2)
 
   srv:
     dependencies:
@@ -742,6 +742,10 @@ packages:
     resolution: {integrity: sha512-ca9pw9fomFcKPvFLXhBKUK90ZvGibiGOvRJNbjljY7s7uq/5YO4BOzcYtJqExdx99rF6aAcnRxHmcUHcz6sQsg==}
     engines: {node: '>=0.10'}
 
+  esquery@1.7.0:
+    resolution: {integrity: sha512-Ap6G0WQwcU/LHsvLwON1fAQX9Zp0A2Y6Y/cJBl9r/JbW90Zyg4/zbG6zzKa2OTALELarYHmKu0GhpM5EO+7T0g==}
+    engines: {node: '>=0.10'}
+
   esrecurse@4.3.0:
     resolution: {integrity: sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag==}
     engines: {node: '>=4.0'}
@@ -1067,8 +1071,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  sass@1.97.1:
-    resolution: {integrity: sha512-uf6HoO8fy6ClsrShvMgaKUn14f2EHQLQRtpsZZLeU/Mv0Q1K5P0+x2uvH6Cub39TVVbWNSrraUhDAoFph6vh0A==}
+  sass@1.97.2:
+    resolution: {integrity: sha512-y5LWb0IlbO4e97Zr7c3mlpabcbBtS+ieiZ9iwDooShpFKWXf62zz5pEPdwrLYm+Bxn1fnbwFGzHuCLSA9tBmrw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -1486,10 +1490,10 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@vitejs/plugin-vue@6.0.3(vite@7.3.0(sass@1.97.1))(vue@3.5.26)':
+  '@vitejs/plugin-vue@6.0.3(vite@7.3.0(sass@1.97.2))(vue@3.5.26)':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.53
-      vite: 7.3.0(sass@1.97.1)
+      vite: 7.3.0(sass@1.97.2)
       vue: 3.5.26
 
   '@vue/compiler-core@3.5.26':
@@ -1795,6 +1799,10 @@ snapshots:
     dependencies:
       estraverse: 5.3.0
 
+  esquery@1.7.0:
+    dependencies:
+      estraverse: 5.3.0
+
   esrecurse@4.3.0:
     dependencies:
       estraverse: 5.3.0
@@ -2087,7 +2095,7 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.53.3
       fsevents: 2.3.3
 
-  sass@1.97.1:
+  sass@1.97.2:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.1.4
@@ -2137,7 +2145,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite@7.3.0(sass@1.97.1):
+  vite@7.3.0(sass@1.97.2):
     dependencies:
       esbuild: 0.27.1
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2147,7 +2155,7 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       fsevents: 2.3.3
-      sass: 1.97.1
+      sass: 1.97.2
 
   vue-eslint-parser@10.2.0(eslint@9.39.2):
     dependencies:
@@ -2156,7 +2164,7 @@ snapshots:
       eslint-scope: 8.4.0
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
-      esquery: 1.6.0
+      esquery: 1.7.0
       semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
