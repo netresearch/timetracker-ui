@@ -12,7 +12,5 @@
   },
   "author": "Christian Opitz <christian.opitz@netresearch.de>",
   "license": "ISC",
-  "dependencies": {
-    "http-proxy": "^1.18.1"
-  }
+  "dependencies": {}
 }
