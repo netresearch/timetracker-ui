@@ -32,13 +32,23 @@ module.exports = function (app) {
     const transport = target.protocol === 'https:' ? https : http
 
     const headers = { ...req.headers, host: target.host }
-    delete headers.connection
-    delete headers['proxy-connection']
+    const hopByHopHeaders = [
+      'connection',
+      'proxy-connection',
+      'keep-alive',
+      'proxy-authenticate',
+      'proxy-authorization',
+      'te',
+      'trailers',
+      'transfer-encoding',
+      'upgrade'
+    ]
+    hopByHopHeaders.forEach(h => delete headers[h])
 
     const options = {
       hostname: target.hostname,
       port: target.port || (target.protocol === 'https:' ? 443 : 80),
-      path: req.url,
+      path: target.pathname.replace(/\/$/, '') + req.url,
       method: req.method,
       headers,
       rejectUnauthorized: secure
@@ -55,6 +65,18 @@ module.exports = function (app) {
           cookie = addCookiePath(cookie)
         }
         proxyRes.headers['set-cookie'] = cookie
+      }
+
+      const location = proxyRes.headers.location
+      if (location) {
+        try {
+          const locationUrl = new URL(location)
+          if (locationUrl.host === target.host) {
+            proxyRes.headers.location = locationUrl.pathname + locationUrl.search + locationUrl.hash
+          }
+        } catch (_err) {
+          // relative or unparseable Location header — leave as-is
+        }
       }
 
       res.writeHead(proxyRes.statusCode, proxyRes.headers)
