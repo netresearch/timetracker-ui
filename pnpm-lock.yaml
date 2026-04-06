@@ -35,7 +35,7 @@ importers:
         version: 10.0.1(eslint@10.2.0)
       '@vitejs/plugin-vue':
         specifier: ^6.0.4
-        version: 6.0.5(vite@8.0.4(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(vue@3.5.32)
+        version: 6.0.5(vite@8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(vue@3.5.32)
       '@vue/compiler-sfc':
         specifier: ^3.5.32
         version: 3.5.32
@@ -52,8 +52,8 @@ importers:
         specifier: ^1.99.0
         version: 1.99.0
       vite:
-        specifier: ^8.0.4
-        version: 8.0.4(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
+        specifier: ^8.0.5
+        version: 8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
 
   srv: {}
 
@@ -1233,8 +1233,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  vite@8.0.4:
-    resolution: {integrity: sha512-baBr4jUVSLJ0RPyZ2nK0zS2+W8hNHbM4hEzfvllukmRPVS3xDG5ATTNtbRXrKIOE2b8/FsPWJAOnuIxcs7g3cw==}
+  vite@8.0.5:
+    resolution: {integrity: sha512-nmu43Qvq9UopTRfMx2jOYW5l16pb3iDC1JH6yMuPkpVbzK0k+L7dfsEDH4jRgYFmsg0sTAqkojoZgzLMlwHsCQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -1648,10 +1648,10 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@vitejs/plugin-vue@6.0.5(vite@8.0.4(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(vue@3.5.32)':
+  '@vitejs/plugin-vue@6.0.5(vite@8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(vue@3.5.32)':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.2
-      vite: 8.0.4(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
+      vite: 8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
       vue: 3.5.32
 
   '@vue-macros/common@3.1.2(vue@3.5.32)':
@@ -2371,7 +2371,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite@8.0.4(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3):
+  vite@8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
