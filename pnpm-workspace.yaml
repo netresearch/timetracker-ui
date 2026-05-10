@@ -2,4 +2,23 @@ packages:
   - '.'
   - 'srv'
 
+# Supply-chain hardening (pnpm 10.26+).
+# Refuse install when any dependency wants to run lifecycle scripts unless
+# explicitly handled in allowBuilds — blocks newly added transitive packages
+# from silently executing scripts.
+strictDepBuilds: true
+
+# Deny lifecycle scripts for packages whose prebuilt binaries (shipped via
+# platform-specific optionalDependencies) make the postinstall redundant.
+# Setting these to `false` means a hijacked future release cannot execute
+# code via postinstall, regardless of what the lockfile resolves to.
+allowBuilds:
+  esbuild: false
+  "@parcel/watcher": false
+
+# Block versions younger than 7 days (in minutes) — reduces the window in
+# which a hijacked publish can land in dependency updates before the
+# community / npm flags it. Use minimumReleaseAgeExclude for hotfixes.
+minimumReleaseAge: 10080
+
 
