@@ -4,8 +4,8 @@ LABEL maintainer="christian.opitz@netresearch.de"
 
 WORKDIR /root/build
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Install pnpm (corepack was removed from the Node.js image in v25+)
+RUN npm install -g pnpm@latest
 
 # Copy package files for pnpm
 COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml .pnpmrc ./
