@@ -16,9 +16,12 @@ export const useUserStore = defineStore('user', {
     },
     async login(userdata) {
       const form = new FormData()
-      form.append('username', userdata.username)
-      form.append('password', userdata.password)
-      form.append('loginCookie', 'on')
+      form.append('_username', userdata.username)
+      form.append('_password', userdata.password)
+      // Stateless CSRF placeholder: the backend validates same-origin via the
+      // Sec-Fetch-Site header, which the /tt proxy forwards from the browser.
+      form.append('_csrf_token', 'csrf-token')
+      form.append('_remember_me', 'on')
 
       try {
         await request.post('login', form, {
