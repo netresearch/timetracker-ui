@@ -1,6 +1,6 @@
 {
   "name": "timetracker-ui",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Timetracker UI",
   "author": "Christian Opitz <christian.opitz@netresearch.de>",
   "private": true,
