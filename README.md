@@ -1,5 +1,16 @@
 # Timetracker UI
 
+> [!WARNING]
+> **This repository is deprecated and archived.**
+>
+> The statistics feature this app provided (formerly hosted at `stats.timetracker.nr`)
+> is now **part of [timetracker](https://github.com/netresearch/timetracker) itself**.
+> The standalone service has been decommissioned and `stats.timetracker.nr` now
+> redirects to the main timetracker application.
+>
+> No further development or releases will happen here. See NRS-4501 for the
+> decommissioning details.
+
 A modern user interface for [timetracker](https://github.com/netresearch/timetracker) - serving statistics and analytics.
 
 ## Tech Stack
